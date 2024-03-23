@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './pages/App';
+import Questions from './pages/Questions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
 
 import { initializeApp } from 'firebase/app';
 
@@ -17,20 +19,38 @@ const firebaseConfig = {
   appId: "1:558131244626:web:5d9f3c34f728fb8b5df98b"
 };
 
+const router = createBrowserRouter([{
+  path: '/',
+  element: <App />,
+  errorElement: <div>Error 404</div>
+}, {
+  path: '/Questions',
+  element: <Questions />
+}
+])
+
 const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className="App container-fluid d-flex justify-content-center align-items-center">
-      <div className='row'>
-        <div className="col">
-          <App />
 
+
+    <div className='App'>
+      <div className='top'>
+        <button>Home</button>
+      </div>
+
+      <div className="container-fluid d-flex justify-content-center align-items-center">
+        <div className='row'>
+          <div className="col">
+            <RouterProvider router={router} />
+          </div>
         </div>
       </div>
-    </div>
 
+
+    </div>
 
   </React.StrictMode >
 );

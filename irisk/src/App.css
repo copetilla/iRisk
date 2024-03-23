@@ -4,11 +4,19 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.container-fluid {
+.top {
+  height: 30px;
+}
+
+.App {
 
   color: #fff;
   background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
   min-height: 100vh;
+}
+
+.container-fluid {
+  height: calc(100vh - 80px);
 }
 
 
