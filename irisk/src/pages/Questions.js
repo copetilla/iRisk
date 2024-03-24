@@ -62,7 +62,7 @@ function Questions() {
     }
     else if (colNum === 4) {
         console.log('aqui entro 4')
-        classcol = 'col-sm-12 col-md-3 col-lg-3'
+        classcol = 'col-sm-6 col-md-3 col-lg-3'
     }
 
     let sectionContent;
