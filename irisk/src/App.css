@@ -22,11 +22,12 @@
 
 .welcome {
   display: block;
+  min-width: 60vw;
   max-width: 72vw;
   margin-top: 10vh;
   margin-bottom: 30px;
   background: rgba(0, 0, 0, 0.56);
-  padding: 50px;
+  padding: 10%;
   border-radius: 16px;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(11.6px);
@@ -48,6 +49,16 @@
 .btn-outline:hover {
   border-color: #2668db !important;
   background-color: #2668db !important;
+}
+
+.btns {
+  padding: 20% !important;
+}
+
+@media (max-width: 767px) {
+  .btns {
+    padding: 10% !important;
+  }
 }
 
 @keyframes slideInLeft {

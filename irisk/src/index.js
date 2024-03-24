@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './pages/App';
 import Questions from './pages/Questions';
+import Result from './pages/Result';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { initializeApp } from 'firebase/app';
 
@@ -24,8 +25,12 @@ const router = createBrowserRouter([{
   element: <App />,
   errorElement: <div>Error 404</div>
 }, {
-  path: '/Questions',
+  path: '/Questions/:section',
   element: <Questions />
+},
+{
+  path: '/Result/:points',
+  element: <Result />
 }
 ])
 
@@ -38,7 +43,7 @@ root.render(
 
     <div className='App'>
       <div className='top'>
-        <button>Home</button>
+        <a className='btn btn-secondary m-2' href='/'>Home</a>
       </div>
 
       <div className="container-fluid d-flex justify-content-center align-items-center">
